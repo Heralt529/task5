@@ -8,7 +8,7 @@ function calculate()
   let price = parseInt(p.value);
 
   if (isNaN(count) || count < 1) {
-        alert('Введите корректное количество');
+        alert("Введите корректное количество");
         return;
     }
 
@@ -16,5 +16,6 @@ function calculate()
 
   const result = document.getElementById("result");
   result.textContent = `Стоимость: ${totalPrice}`;
+
 
 }
