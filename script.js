@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const formattedCost = totalCost.toLocaleString('ru-RU');
         
         totalCostElement.textContent = formattedCost + ' руб.';
-        resultDiv.style.display = 'block';
     });
 });
+
