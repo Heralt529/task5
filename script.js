@@ -1,21 +1,25 @@
-function calculate() 
-{
- 
-  let c = document.getElementsByName("count")[0];
-  let p = document.getElementsByName("product")[0];
+document.addEventListener('DOMContentLoaded', function() {
+    const productSelect = document.getElementById('product');
+    const quantityInput = document.getElementById('quantity');
+    const calculateButton = document.getElementById('calculate');
+    const resultDiv = document.getElementById('result');
+    const totalCostElement = document.getElementById('total-cost');
+    const quantityError = document.getElementById('quantity-error');
 
-  let count = parseInt(c.value);
-  let price = parseInt(p.value);
-
-  if (isNaN(count) || count < 1) {
-        alert("Введите корректное количество");
-        return;
-    }
-
-  const totalPrice = count * price;
-
-  const result = document.getElementById("result");
-  result.textContent = `Стоимость: ${totalPrice}`;
-
-
-}
+    calculateButton.addEventListener('click', function() {
+        const price = parseInt(productSelect.value);
+        const quantity = parseInt(quantityInput.value);
+        
+        if (isNaN(quantity) || quantity < 1) {
+            alert("Введите корректное количество");
+            return;
+        }
+        
+        
+        const totalCost = price * quantity;
+        const formattedCost = totalCost.toLocaleString('ru-RU');
+        
+        totalCostElement.textContent = formattedCost + ' руб.';
+        resultDiv.style.display = 'block';
+    });
+});
